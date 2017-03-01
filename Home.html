@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Maylene Wang </title>
+	<link rel="stylesheet" href="homestyles.css">
+	
+	<style type="text/css">
+	    #section1 a:hover { color:#505050;}
+		#section2 a:hover { color:#505050;}
+	</style>
+</head>
+
+<body>
+	<div id="section2"><strong><a href="blog.html">Blog</a></strong></div>
+		<p><canvas id="mycanvas"></canvas> 
+</body>
+
+  <p><script src="processing.js"></script> 
+ 
+ <script>
+
+	var sketchProc = function(processingInstance) {
+     with (processingInstance) {
+		var width = 1500;
+		var height = 500;
+		size(width, height); 
+        frameRate(30);
+        	
+		background(0, 0, 0);
+		
+		var rectx, recty;
+		rectx = 10; 
+		recty = 500; 
+		var x, y, z;
+		var gameover = 0;
+		var points = 0;
+		var power = 100;
+		var highscore = 0;
+		
+		textSize(20);
+		
+		
+		//draw one star
+		var drawStar = function(){
+			var radius = 5; 
+			strokeWeight(1)
+			fill(255, 255, 0);
+			ellipse(random(0, width), random(0, width), radius, radius);
+		};
+		
+		//draw star width/4 times
+		var manyStars = function(){
+			for (i = 0; i<width; i+=width/4){
+			drawStar();
+			}
+		};
+		
+		//draw the rocket
+		var drawRocket = function(){
+			strokeWeight(1)
+			stroke(0, 0, 0);
+			var rectw, recth, wx, wy, wr, tx1, ty1, tx2, ty2, tx3, ty3, f1x1, f1x2, f1x3, f1y1, f1y2, f1y3, f2x1, f2x2, f2x3, f2y1, f2y2, f2y3;
+			rectw = 50;
+			recth = 20;
+			wx = rectx + 35;
+			wr = 10;
+			wy = recty + 10;
+			tx1 = rectx + rectw;
+			tx2 = tx1;
+			ty1 = recty - 5;
+			ty2 = recty + recth + 5;
+			tx3 = tx1 + 20;
+			ty3 = (ty1 + ty2)/2;
+			f1x1 = rectx;
+			f1x2 = rectx + 20;
+			f1x3 = rectx;
+			f1y1 = recty;
+			f1y2 = recty;
+			f1y3 = recty - 10;
+			f2x1 = rectx;
+			f2x2 = rectx + 20;
+			f2x3 = rectx;
+			f2y1 = recty + recth;
+			f2y2 = recty + recth;
+			f2y3 = recty + recth + 10;
+			
+			//body
+			fill(100, 100, 110);
+			rect(rectx, recty, rectw, recth);
+			
+			//window
+			fill(10, 150, 255);
+			ellipse(wx, wy, wr, wr);
+			
+			//head
+			fill(255, 100, 110);
+			triangle(tx1, ty1, tx2, ty2, tx3, ty3);
+			
+			//fin1
+			triangle(f1x1,f1y1, f1x2, f1y2, f1x3, f1y3);
+			
+			//fin2
+			triangle(f2x1,f2y1, f2x2, f2y2, f2x3, f2y3);
+		};
+		
+		//draw the power bar
+		var drawPower = function (){
+		
+		fill(255, 255, 255);
+		rect(130, 70, 105, 20);
+		
+		fill(255, 0, 0);
+		rect(132, 73, power, 15);
+		}
+
+		//when click, shoot a laser
+		//calculate points based on target hit
+		//calculate laser power based on number of hits/misses
+		//initiate game over
+		mousePressed = function(){
+			strokeWeight(5)
+			stroke(255, 255, 0);
+			line(rectx+70, recty+10, 1500, recty+10);
+			
+			if (z+50>recty && z-50<recty && y+70 >rectx && x != 0){
+				x = 0;//asteroid fill color becomes black, "disappear"
+				points = points + 500;
+				if (power < 80){
+				power+=20;
+				}if (power > 80 && power < 100){
+				power = 100;
+				} 
+			}
+			else{
+				points-=10;	
+				if (power > 10){
+				power-=10;
+				}if (power > 0 && power <= 10){
+				power = 0;
+				gameover = 1;
+				} if (power == 0){
+				gameover = 1;
+				}
+			}			
+		}
+		
+		
+		//main
+		draw = function(){
+			background(0, 0, 0);
+			manyStars();
+			
+
+			//asteroid random coordinate generator
+			//cannot be outsourced or they lose permanence
+			if (millis()%100 == 0){
+				x = random(100, 255);
+				y = random(0, 1500);
+				z = random(0, 250);
+			}
+			//asteroid draw
+				fill(x, x, x);
+				stroke(0, 0, 0);
+				ellipse(y, z, 100, 100);
+					
+			drawRocket();
+			
+			//rocket motion
+			if (mouseX > rectx){
+			rectx = rectx + abs(mouseX - rectx)/75
+			}else {
+			rectx = rectx - abs(mouseX-rectx)/75;
+			}
+			if (mouseY > recty){
+			recty = recty + abs(mouseY - recty)/75;
+			}else {
+			recty = recty - abs(mouseY-recty)/75;
+			}	
+					
+			//if player lost the game
+			if (gameover == 1){
+			//recalculate hgh score
+			if (points > highscore){
+				highscore = points;
+			}
+				points = 0;
+				textSize(30);
+				text("NEW GAME", 120, 50);
+				power = 100;
+				gameover = 0;	
+			}
+			
+			//instructions and score display
+			fill(255, 255, 255);
+			text("Shoot the grey space junk to earn points! Lose points by wasting laser power.", 10, 20);
+			text("Points: "+points, 10, 50);
+			text("Laser Power: ", 10, 87);
+			drawPower();
+			textSize(20);
+			fill(255, 255, 255);
+			text("high score: "+highscore, 10, 470);
+		}; //end draw
+		
+    }};
+
+    // Get the canvas that Processing-js will use
+    var canvas = document.getElementById("mycanvas"); 
+    // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    var processingInstance = new Processing(canvas, sketchProc); 
+ </script>
+</html>

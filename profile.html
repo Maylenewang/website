@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Maylene Wang </title>
+	<link rel="stylesheet" href="styles.css">
+
+	<style type="text/css">
+	    #sidebar a:hover { color:#505050;}
+	</style>
+</head>
+<body>
+<!-- change buttons to reveal on mouseover? -->
+
+<div id="header">
+<div class="title">Profile</div>
+</div>
+<div id="sidebar">
+<table border="0">
+<tr>
+<td><a href="Home.html">Home</a></td>
+</tr>
+<tr>
+<td><a href="profile.html">Profile</a></td>
+</tr>
+<tr>
+<td><a href="blog.html">Blog</a></td>
+</tr>
+</table>
+</div>
+<div id="section">
+<div class="profilepicture">
+<img src="selfportrait.JPG" width="425" height="500"></div>
+<div class="profiletext2">
+<h1>Introduction</h1>
+<p>I'm Maylene Wang, I&nbsp;like to explore the world, write, and draw. I study&nbsp;Mechatronics Engineering at the University of Waterloo.&nbsp;</p>
+<p>I seek to do a lot of good in the world.&nbsp;</p>
+<p>Currently I am working in nanotechnology research at Soochow University in China. Catch up with my adventures in my blog!</p>
+</div>
+<div class="profiletext">
+<h1> Skills </h1>
+<p><canvas id="mycanvas"></canvas> 
+<p id="skills">Push a button to reveal one of my skills!<p>
+
+<button onclick="skill1(skill)">Skill 1</button>
+<button onclick="skill2(skill)">Skill 2</button>
+<button onclick="skill3(skill)">Skill 3</button>
+<button onclick="skill4(skill)">Skill 4</button>
+<button onclick="skill5(skill)">Skill 5</button>
+<button onclick="skill6(skill)">Skill 6</button>
+<button onclick="skill7(skill)">Skill 7</button>
+
+<script language="JavaScript"> 
+var skill=document.getElementById("skills");
+function skill1 (skill)
+{
+skill.innerHTML="Matlab (high proficiency), Excel (high proficiency)";
+}
+function skill2(skill)
+{
+skill.innerHTML="Mechanical design principles (solid understanding of gear and shaft design, truss structures, very strong knowledge of materials)";
+}
+function skill3(skill)
+{
+skill.innerHTML="PCB design (4 months), soldering (4 months). Made a line following robot.";
+}
+function skill4(skill)
+{
+skill.innerHTML="C (2 years), C# (4 months), C++ (1 year), Java (4 months), SQL (4 months), HTML (new skill), Javascript(new skill), CSS (new skill). This website should showcase most of my front-end web development skills :)";
+}
+function skill5(skill)
+{
+skill.innerHTML="TCP/IP, Networking (4 months)";
+}
+function skill6(skill)
+{
+skill.innerHTML="Acceptance Test Plans, High Level Designs, Reports, Articles (lifetime affinity to writing)";
+}
+function skill7(skill)
+{
+skill.innerHTML="Research, lab techniques in organic chemistry (4 months), chemistry, DNA cloning (1 year), fatigue and stress (8 months)";
+}
+</script>
+</div>
+<div class="profiletext2">
+<h1> My Experiences </h1>
+<p> <!-- slideshow --> 
+<p id ="coopdescription">Push a button to find out about my previous coop experiences<p>
+<img id="picture" src="pagodalowres.JPG" height="300" width="300"></img>
+<p id="coop"><p>
+<p id="pastime"><p>
+
+<button onclick="coop1(job, pers)">Savision</button>
+<button onclick="coop2(job, pers)">Blackberry</button>
+<button onclick="coop3(job, pers)">University of Waterloo</button>
+<button onclick="coop4(job, pers)">Nokia</button>
+<button onclick="coop5(job, pers)">Soochow University</button>
+<button onclick="coop6(job, pers)">We will find out!</button>
+
+<script language="JavaScript"> 
+var job=document.getElementById("coop");
+var pers =document.getElementById("pastime");
+var img = document.getElementById("picture");
+var desc = document.getElementById("coopdescription");
+function coop1 (job, pers)
+{
+desc.innerHTML="C# Tester and Automation at Savision, January-May 2014";
+job.innerHTML="Automation programming, regression testing, Git, Jira";
+pers.innerHTML="Learned to cook, survived the Ottawa winter, biked 30km on an old mountain bike in the winter";
+img.src="savision.jpg"
+}
+function coop2(job, pers)
+{
+desc.innerHTML="Software Tools Developer at Blackberry, September-December 2014";
+job.innerHTML="Back-end web development (Java SQL), Primefaces API to generate xhtml, Git, Jira";
+pers.innerHTML="Art project: oversized charchoal drawings of eyes, 23 pieces, modelled by my friends. Organized Events in the Blackberry coop social committee.";
+img.src="blackberry.jpg";
+}
+function coop3(job, pers)
+{
+desc.innerHTML="Materials Research and Database design at University of Waterloo, May-August 2015";
+job.innerHTML="Fatigue tests, crack-life initiation calculations using excel. Lead projects: Restructured main drive for Mechanical and Mechatronics Engineering graduate studies, digitized student records, trained a mentee, rewrote the MME graduate studies website, authored a FAQ page";
+pers.innerHTML="Enrolled in Microbiology - Biol 240, wrote the GRE";
+img.src="waterloo.jpg";
+}
+function coop4(job, pers)
+{
+desc.innerHTML="Pre-Sales Systems Engineer at Nokia, Janurary-May 2016";
+job.innerHTML="TCP/IP training, reports in excel, create demos, Acceptance Test Plan, High Level Design";
+pers.innerHTML="Learned to make great smoothies, lots of writing";
+img.src="nokia.jpg";
+}
+function coop5(job, pers)
+{
+desc.innerHTML="Nanotechnology research student at Soochow University, September-December 2016";
+job.innerHTML="Organic Chemistry principles, learning about Nanotechnology: new class of self-healing materials";
+pers.innerHTML="Developed my website (which you are reading), living in China";
+img.src="soochow.jpg";
+}
+function coop6(job, pers)
+{
+job.innerHTML="To be deterimined";
+pers.innerHTML="To be determined";
+img.src="questionmark.jpg";
+}
+</script>
+</div>
+<div class="profiletext">
+<h1> Involvement in School </h1>
+<p> <!-- slideshow -->
+<p>Push a button to reveal my activities during each school semester<p>
+<p id="involvement"><p>
+<button onclick="inv1(inv)">1a</button>
+<button onclick="inv2(inv)">1b</button>
+<button onclick="inv3(inv)">2a</button>
+<button onclick="inv4(inv)">2b</button>
+<button onclick="inv5(inv)">3a</button>
+
+<script language="JavaScript"> 
+var inv = document.getElementById("involvement");
+function inv1(inv){
+inv.innerHTML="Formula Hybrid Student team";
+}
+function inv2(inv){
+inv.innerHTML="Warrior Marching Band, Volleyball intramurals";
+}
+function inv3(inv){
+inv.innerHTML="Director for Engineering Society Semi-Formal, Art, and Genius Bowl.";
+}
+function inv4(inv){
+inv.innerHTML="Outreach Student Career Leader for Center for Career Action, Orientation leader, Ambassador for open house tours";
+}
+function inv5(inv){
+inv.innerHTML="Waterloo Satellite Student Team, completed a Half-Marathon";
+}
+</script>
+
+</div>
+
+<div class="profiletext2">
+<h1> Other abilities and interests </h1>
+<p> <!-- slideshow -->
+<p>Push a button to reveal one of my other interests, skills, or hobbies</p>
+<p id="interest"><p>
+
+<button onclick="in1(inte)">Interest 1</button>
+<button onclick="in2(inte)">Interest 2</button>
+<button onclick="in3(inte)">Interest 3</button>
+<button onclick="in4(inte)">Interest 4</button>
+<button onclick="in5(inte)">Interest 5</button>
+<button onclick="in6(inte)">Interest 6</button>
+<button onclick="in7(inte)">Interest 7</button>
+
+<script language="JavaScript"> 
+var inte=document.getElementById("interest");
+function in1 (inte)
+{
+inte.innerHTML="Photography (novice)";
+}
+function in2(inte)
+{
+inte.innerHTML="Spanish (took level 1 course)";
+}
+function in3(inte)
+{
+inte.innerHTML="French (learned for 7 years, worked in a summer camp in Montreal)";
+}
+function in4(inte)
+{
+inte.innerHTML="Drawing (still life, personal projects, pencil, charcoal, acryllic)";
+}
+function in5(inte)
+{
+inte.innerHTML="Piano (3 years, almost grade 10 Royal Conservatory of Music (RCM))";
+}
+function in6(inte)
+{
+inte.innerHTML="Clarinet (7 years)";
+}
+function in7(inte)
+{
+inte.innerHTML="Running (half year)";
+}
+</script>
+</div>
+</div>
+<div id="footer">
+<p><I>Maylene Wang</I></p>
+<p><I>mj4wang@uwaterloo.ca</I></p>
+<p><I>ca.linkedin.com/in/maylenewang</I></p>
+</div>
+</body>
+  <p><script src="processing.js"></script> 
+ 
+ <script>
+
+	var sketchProc = function(processingInstance) {
+     with (processingInstance) {
+		var width = 450;
+		var height = 250;
+		size(width, height); 
+        frameRate(10);
+		
+		var rectx, recty, x, y;
+
+		rectx = 0; 
+		recty = 0;
+        		
+		var drawEye = function(x, y){
+			stroke(0, 0, 0)
+			strokeWeight(5)
+			noFill()
+			//top lid
+			bezier(350+x, 120+y, 300+x, 55+y, 125+x, 45+y, 100+x, 150+y)	
+			
+			strokeWeight(2)
+			noFill()
+			//crease
+			bezier(330+x, 80+y, 280+x, 35+y, 135+x, 25+y, 100+x, 110+y)	
+
+			//tear duct
+			bezier(120+x, 145+y, 115+x, 135+y, 105+x, 155+y, 100+x, 150+y)
+			//bottom lid
+			bezier(345+x, 115+y, 340+x, 150+y, 225+x, 200+y, 150+x, 150+y)
+
+			bezier(350+x, 120+y, 355+x, 123+y, 370+x, 110+y, 380+x, 95+y);
+			bezier(345+x, 115+y, 350+x, 118+y, 365+x, 105+y, 385+x, 75+y);
+			bezier(340+x, 110+y, 345+x, 113+y, 360+x, 100+y, 375+x, 78+y);
+			bezier(335+x, 105+y, 340+x, 108+y, 355+x, 95+y, 360+x, 80+y);
+			bezier(325+x, 100+y, 335+x, 93+y, 350+x, 85+y, 350+x, 75+y);
+			bezier(315+x, 90+y, 330+x, 88+y, 335+x, 80+y, 340+x, 70+y);
+			bezier(300+x, 85+y, 325+x, 80+y, 325+x, 75+y, 330+x, 65+y);
+			bezier(290+x, 80+y, 320+x, 78+y, 315+x, 70+y, 320+x, 60+y);
+
+
+			bezier(335+x, 132+y, 350+x, 133+y, 355+x, 140+y, 360+x, 145+y)
+			bezier(315+x, 150+y, 320+x, 153+y, 325+x, 155+y, 330+x, 170+y)
+			bezier(285+x, 160+y, 290+x, 165+y, 298+x, 170+y, 300+x, 180+y)
+			
+			fill(0, 0, 0)
+			quad(70+x, 70+y, 65+x, 40+y, 255+x, 0+y, 260+x, 30+y)
+			triangle(260+x, 30+y, 255+x, 0+y, 400+x, 75+y)
+
+		};
+		
+		
+		var drawEyelid = function(x, y){
+			stroke(255, 255, 255)
+			
+			fill(255, 255, 255)
+			triangle(0+x, 38+y, 300+x, 300+y, 0+x, 300+y)
+			triangle(0+x, 110+y, 300+x, 200+y, 0+x, 300+y)
+
+			fill(255, 102, 178)
+			triangle(120+x, 145+y, 100+x, 150+y, 120+x, 111+y);
+			
+			fill(255, 255, 255)
+			rect(0+x, 0+y, 500, 73)
+			rect(0+x, 0+y, 100, 500)
+			rect(0+x, 170+y, 500, 300)
+			triangle(0+x, 0+y, 240+x, 0+y, 0+x, 228+y)
+			triangle(500+x, 0+y, 500+x, 227+y, 185+x, 0+y)
+			triangle(500+x, 5+y, 500+x, 300+y, 117+x, 300+y)
+			triangle(500+x, 90+y, 500+x, 180+y, 225+x, 180+y)
+			bezier(500+x, 0+y, 380+x, 157+y, 125+x, 45+y, 0+x, 0+y)	
+			bezier(300+x, 0+y, 160+x, 98+y, 240+x, 50+y, 0+x, 150+y)	
+
+
+		};
+		
+
+		var drawIris = function(x, y){
+			fill(102, 51, 0)
+			strokeWeight(3)
+			ellipse(rectx+x, recty+y, 100, 100)
+			
+			//highlight
+			fill(153, 76, 0)
+			strokeWeight(0.1);
+			ellipse(rectx+20+x, recty+12+y, 40, 30);
+			
+			//shade
+			fill(51, 0, 0)
+			ellipse(rectx-10+x, recty-10+y, 80, 30);
+			
+			strokeWeight(5)
+			stroke(51, 0, 0)
+			noFill()
+			ellipse(rectx+x, recty+y, 92, 92)
+			
+			//pupil
+			stroke(0, 0, 0)
+			strokeWeight(30)
+			point(rectx+x, recty+y)
+			
+			strokeWeight(1)
+			line(rectx+x, recty+17+y, rectx+x, recty+45+y)
+			line(rectx+x, recty-17+y, rectx+x, recty-45+y)
+			line(rectx+4+x, recty+18+y, rectx+8+x, recty+44+y)
+			line(rectx-4+x, recty+18+y, rectx-8+x, recty+44+y)
+			line(rectx+4+x, recty-16+y, rectx+8+x, recty-46+y)
+			line(rectx-4+x, recty-16+y, rectx-8+x, recty-46+y)
+			line(rectx+8+x, recty+19+y, rectx+16+x, recty+42+y)
+			line(rectx-8+x, recty+19+y, rectx-16+x, recty+42+y)
+			line(rectx+8+x, recty-15+y, rectx+16+x, recty-47+y)
+			line(rectx-8+x, recty-15+y, rectx-16+x, recty-47+y)
+			line(rectx+18+x, recty+y, rectx+45+x, recty+y)
+			line(rectx-18+x, recty+y, rectx-45+x, recty+y)
+			line(rectx+18+x, recty+4+y, rectx+44+x, recty+8+y)
+			line(rectx+18+x, recty-4+y, rectx+44+x, recty-8+y)
+			line(rectx-18+x, recty+4+y, rectx-44+x, recty+8+y)
+			line(rectx-18+x, recty-4+y, rectx-44+x, recty-8+y)
+			line(rectx+17+x, recty+8+y, rectx+44+x, recty+16+y)
+			line(rectx+17+x, recty-8+y, rectx+44+x, recty-16+y)
+			line(rectx-17+x, recty+8+y, rectx-44+x, recty+16+y)
+			line(rectx-17+x, recty-8+y, rectx-44+x, recty-16+y)
+			line(rectx+15+x, recty+15+y, rectx+35+x, recty+31+y)
+			line(rectx-15+x, recty+15+y, rectx-35+x, recty+31+y)
+			line(rectx+15+x, recty-15+y, rectx+35+x, recty-31+y)
+			line(rectx-15+x, recty-15+y, rectx-35+x, recty-31+y)
+			line(rectx+x, recty+17+y, rectx+x, recty+45+y)
+			line(rectx+x, recty+17+y, rectx+x, recty+45+y)
+
+			
+			fill(255, 255, 255);
+			strokeWeight(0.1);
+			ellipse(rectx+20+x, recty-20+y, 10, 30);
+			ellipse(rectx+10+x, recty-20+y, 5, 8);
+
+		};
+		
+		draw = function(){
+			background(255, 255, 255);
+			
+		
+			drawIris(0, 20);
+			drawEyelid(0, 20);
+			drawEye(0, 20);
+			
+			if (mouseX > rectx){
+			rectx = constrain(rectx + abs(mouseX - rectx)/10, 120, 330);
+			}else {
+			rectx = constrain(rectx - abs(mouseX-rectx)/10, 120, 330);
+			}
+			if (mouseY > recty){
+			recty = constrain(recty + abs(mouseY - recty)/10, 80, 170);
+			}else {
+			recty = constrain(recty - abs(mouseY-recty)/10, 80, 170);
+			}	
+			
+
+		};//end draw
+		
+    }//end with
+	
+	};//end sketchProc
+
+    // Get the canvas that Processing-js will use
+    var canvas = document.getElementById("mycanvas"); 
+    // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    var processingInstance = new Processing(canvas, sketchProc); 
+ </script>
+</html>
